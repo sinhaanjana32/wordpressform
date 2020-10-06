@@ -26,7 +26,6 @@ app.use(cookieParser());
 
 
 
-
 app.post("/api/uploadInfo", (req, res) => {
   console.log(req.body)
       //save all the data we got from the client into the DB 
@@ -39,6 +38,12 @@ app.post("/api/uploadInfo", (req, res) => {
       })
   
   });
+  
+app.use(express.static(path.join(__dirname, '../client/build')));
+app.get('/*', (req, res) => {
+ res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+});
+
   
 
   if (process.env.NODE_ENV === "production") {

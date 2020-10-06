@@ -133,7 +133,6 @@ const FormM = () => {
       email:firebase.auth().currentUser.email,
       name: name,
       link:link,
-      service: service,
       domain: domain,
       platform: platform,
       radiobox: value,
