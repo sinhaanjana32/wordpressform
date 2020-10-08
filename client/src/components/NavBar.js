@@ -17,11 +17,18 @@ const navbarStyle = {
 
 }
 
-
-
-
 export const NavBar = (props) => {
     return (
+
+        !props.user ?
+        <div className="container">
+        <Header style ={navbarStyle}>
+        <p>Login</p> 
+       </Header>
+  </div>:
+        
+       
+
         <div className="container">
               <Header style ={navbarStyle}>
              Welcome {props.user.displayName}

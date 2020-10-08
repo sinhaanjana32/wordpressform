@@ -3,11 +3,12 @@ import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import { NavBar } from "./NavBar"
 import FormM from "./FormM"
+import {API_KEY} from "./Config"
 
 
 
 firebase.initializeApp({
-    apiKey: "AIzaSyB1B5LDCjV7BkNElyBsEmRhwE8qdn_di10",
+    apiKey: API_KEY,
     authDomain: "fir-learn-bc13c.firebaseapp.com"
 })
 
@@ -15,8 +16,8 @@ firebase.initializeApp({
 
 
 class Auth extends Component {
-
-
+  
+npm 
     state = { isSignedIn : false }
     
     uiConfig = {
@@ -57,7 +58,11 @@ componentDidMount = () => {
              <FormM/>
            </div>
          ) : (
+
+           <>
+           <NavBar/>
         <div className="login" >
+      
            <h1 className="note">  SignIn</h1>
            <StyledFirebaseAuth
              uiConfig={this.uiConfig}
@@ -66,6 +71,7 @@ componentDidMount = () => {
               
            <p className="note">Your email Id will be received and I will get back to you :)</p>
            </div>
+           </>
          )}
         
       </div>
