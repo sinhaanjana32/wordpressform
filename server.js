@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser");
 
 
 const mongoose = require("mongoose");
-mongoose.connect( process.env.MONGODB_URI || "mongodb+srv://wordpressadmin:wordpressadmin@cluster0.6ssoj.mongodb.net/<dbname>?retryWrites=true&w=majority", {
+mongoose.connect( process.env.MONGODB_URI || "mongodb+srv://form1:form1@cluster0.8t0er.mongodb.net/<dbname>?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -39,16 +39,27 @@ app.post("/api/uploadInfo", (req, res) => {
   
   });
   
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, './client/build')));
 app.get('/*', (req, res) => {
- res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+ res.sendFile(path.resolve(__dirname, "./client", "build", "index.html"));
 });
 
+  // Serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+
+  // Set static folder
+
+  app.use(express.static(path.join(__dirname, './client/build')));
   
+  // index.html for all page routes
+  app.get("/*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./client", "build", "index.html"));
+  });
+}
 
 
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8080
 
 app.listen(port, () => {
   console.log(`Server Running at ${port}`)
