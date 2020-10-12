@@ -9,7 +9,7 @@ import {API_KEY} from "./Config"
 
 firebase.initializeApp({
     apiKey: API_KEY,
-    authDomain: "fir-learn-bc13c.firebaseapp.com || wpform.herokuapp.com"
+    authDomain: "fir-learn-bc13c.firebaseapp.com"
 })
 
 
