@@ -9,19 +9,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:#233;
+  max-width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   justify-content: center;
   text-align:center;
-
+ float: none;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-   
-
-    
 }
 
 .login{
@@ -29,7 +27,6 @@ code {
 }
 
 .note{
-
 color: tan;
   justify-content: center;
   text-align:center;

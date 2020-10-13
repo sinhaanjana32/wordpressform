@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import { NavBar } from "./NavBar"
+import Footer from './Footer';
 import FormM from "./FormM"
 import {API_KEY} from "./Config"
 
@@ -52,11 +53,11 @@ componentDidMount = () => {
     return (
         <div className="App">
           {this.state.isSignedIn ? (
-           <div>
+           <>
           <NavBar user={firebase.auth().currentUser} />
-          
              <FormM/>
-           </div>
+             <Footer/>
+           </>
          ) : (
 
            <>

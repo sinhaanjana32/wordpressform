@@ -12,7 +12,8 @@ const useStyles = makeStyles({
   root: {
    "&. MuiBottomNavigationAction-root":{
      minWidth: 0,
-     maxWidth: 250,
+     maxWidth: 100,
+     
    },
    "& .MuiSvgIcon-root": {
      fill:"tomato",

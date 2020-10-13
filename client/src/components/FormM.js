@@ -2,58 +2,39 @@ import React, {useState} from 'react'
 import firebase from 'firebase'
 import Axios from 'axios'
 import FormGroup from '@material-ui/core/FormGroup';
-
+import Footer from './Footer';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import {FormLabel, TextField, FormHelperText, FormControl}from '@material-ui/core';
+import {FormLabel, TextField, Container, Hidden}from '@material-ui/core';
 
 import  {makeStyles, withStyles} from '@material-ui/core/styles';
 import  {Typography, Button, Grid, Box,Radio, RadioGroup} from '@material-ui/core'
 import SendIcon from "@material-ui/icons/Send"
-import Footer from './Footer';
+
 
 
 
 const useStyles = makeStyles(theme => ({
-  form: {
-    top: "100%",
-    left: "50%",
-    overflowY: "auto",
 
+  form: {
+    top: "110%",
+    left: "50%",
     transform: "translate(-50%, -50%)",
-    position: "absolute",
-    [theme.breakpoints.between("xs","md")]: {
-      position:"absolute",
-      overflowX:"hidden",
-      width: '30vh',
-      margin: "1rem auto",
-      float:"none",
-      height:"60vh",
- 
-      },
+    position:"absolute",
+    overflowX:'hidden',
+  
   },
 
   ledgend:{
     color: 'tomato',
   },
-
-cbLabel:{
+  cbLabel:{
   color: 'tan',
 },
-
 button : {
   marginTop: "1rem",
-
   color:"tomato",
   borderColor: "tan",
-  [theme.breakpoints.between("xs","md")]: {
-
-    position:"absolute",
-    overflowX:"hidden",
-    width: '30vh',
-    margin: "0 auto",
-    float:"none",
-    },
 },
 }))
 
@@ -84,8 +65,6 @@ const InputField = withStyles({
 
 
 const FormM = () => {
-
-
   const [name, setName] = useState('');
   const [link, setLink] = useState('');
   const [service, setService] = useState('');
@@ -96,8 +75,6 @@ const FormM = () => {
     WIX: false,
     Code:false,
     Others: false,
-
-
   })
   const [domain, setDomain] = useState({
     both:false,
@@ -106,7 +83,6 @@ const FormM = () => {
     Neither:false
   })
   
-
   function onOpChange(e) {
     console.log('radio checked', e.target.value);
     setValue(e.target.value);
@@ -122,10 +98,6 @@ const FormM = () => {
     setDomain({ ...domain, [event.target.name]: event.target.checked });
   }
   const {both, hosting, DandH, Neither} = domain;
-
-
-
-
 
   const handleSubmit = (e) =>{
   e.preventDefault();
@@ -152,25 +124,15 @@ const FormM = () => {
 
   }
 
-
-
 const classes = useStyles()
-
-
-
-
 return (
- <div >
+ <>
+<Box  style={{background:"#233",height:"200vh" }}></Box>
 
-<Box component="div" style={{background:"#233",height:"200vh" }}></Box>
-
-<Grid container justify="center">
-<Box component="form" className={classes.form} >
- <Typography variant="h5"  style={{color:"tan", textAlign:"center", textTransform:"uppercase" , marginTop:"100px"}}>
+<Grid fixed className={classes.form} >
+ <Typography variant="h5"  style={{color:"tan", textAlign:"center", textTransform:"uppercase" }}>
    Share your requirements...</Typography>
    <br/>
-
-   
 <FormLabel className={classes.ledgend} component="legend">1. Whats your good name? </FormLabel>
  <InputField
 fullWidth={true}
@@ -293,21 +255,12 @@ onChange={(e)=> {setService(e.target.value)}}
         <FormControlLabel value="5 pages and multiple similar pages" control={<Radio />} label="5 pages and multiple similar pages" />
    
       </RadioGroup>
+        <Button type="button" className={classes.button} variant="outlined" fullWidth={true} endIcon={<SendIcon />} onClick={handleSubmit}>
+        Submit</Button>
+        </Grid>
+        
 
-<Button type="button" className={classes.button} variant="outlined" fullWidth={true} endIcon={<SendIcon />} onClick={handleSubmit}>
-Submit
-</Button>
-
-</Box>
-
-
-
-
-</Grid>
-
-<Footer/>
-     
-        </div>
+        </>
     )
 }
 

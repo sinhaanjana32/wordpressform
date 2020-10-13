@@ -6,6 +6,7 @@ const { Header} = Layout;
 
 
 
+
 const navbarStyle = {
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -13,8 +14,7 @@ const navbarStyle = {
     color: 'tomato',
     display:'flex',
     fontSize:'25px',
-    
-
+ 
 }
 
 export const NavBar = (props) => {

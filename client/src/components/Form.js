@@ -7,7 +7,7 @@ const { Option } = Select;
 
 const formStyle = {
     marginTop: '140px',
-    width: '500px',
+    width: '800px',
     marginLeft: '20px',
     justifyContent: 'center',
     alignItemss: 'center',
@@ -118,9 +118,6 @@ const Form = () => {
                 </h3>
 
         </div>
-
-
-
 
         <h3>4. Select your option
         <Select  defaultValue="a1" onChange={onPriceChange} style={{ width: 200 }}>
