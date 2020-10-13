@@ -10,7 +10,7 @@ const { Header} = Layout;
 const navbarStyle = {
     justifyContent: 'space-between',
     alignItems: 'center',
-    textAlign:'center',
+    textAlign:'bottom',
     color: 'tomato',
     display:'flex',
     fontSize:'25px',
@@ -23,7 +23,7 @@ export const NavBar = (props) => {
         !props.user ?
         <div className="container">
         <Header style ={navbarStyle}>
-        <p>Please Register</p> 
+        <p style={{marginBottom:'0px' }}>Please Register</p> 
        </Header>
   </div>:
         
