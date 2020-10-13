@@ -23,7 +23,7 @@ export const NavBar = (props) => {
         !props.user ?
         <div className="container">
         <Header style ={navbarStyle}>
-        <p>Login</p> 
+        <p>Please Register</p> 
        </Header>
   </div>:
         
