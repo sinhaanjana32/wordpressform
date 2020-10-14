@@ -22,7 +22,24 @@ const useStyles = makeStyles(theme => ({
     transform: "translate(-50%, -50%)",
     position:"absolute",
     overflowX:'hidden',
+    [theme.breakpoints.down("sm")]: {
+     
+      overflowX:"hidden",
+      float:"none",
+      paddingTop: '15rem',
+      paddingBottom:'1rem',
+      justifyContent:'center',
+
+    
+      },
+      [theme.breakpoints.up("lg")]: {
+     
+        overflowX:"hidden",
+        float:"none",
+        justifyContent:'center',
   
+      
+        },
   },
 
   ledgend:{
@@ -127,7 +144,7 @@ const FormM = () => {
 const classes = useStyles()
 return (
  <>
-<Box  style={{background:"#233",height:"200vh" }}></Box>
+<Box  style={{background:"#233",height:"200vh",padding:'2px' }}></Box>
 
 <Grid fixed className={classes.form} >
  <Typography variant="h5"  style={{color:"tan", textAlign:"center", textTransform:"uppercase" }}>

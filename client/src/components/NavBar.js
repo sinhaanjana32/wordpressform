@@ -6,35 +6,26 @@ const { Header} = Layout;
 
 
 
-
-const navbarStyle = {
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    textAlign:'bottom',
-    color: 'tomato',
-    display:'flex',
-    fontSize:'25px',
- 
-}
-
 export const NavBar = (props) => {
     return (
 
         !props.user ?
         <div className="container">
-        <Header style ={navbarStyle}>
+        <Header className="navbarStyle">
         <p style={{marginBottom:'0px' }}>Please Register</p> 
        </Header>
   </div>:
         
        
 
-        <div className="container">
-              <Header style ={navbarStyle}>
+        <div className="flexContainer">
+              <Header className="navbarStyle">
              Welcome {props.user.displayName}
             <Button
+                className="button"
                 style={{direction:'float-right', backgroundColor:'tomato' , border:'none'}}
                 type="primary"
+                size="small"
                 icon={<PoweroffOutlined />}
                 onClick={() => firebase.auth().signOut()}>
                 Sign out!

@@ -5,6 +5,7 @@ import { NavBar } from "./NavBar"
 import Footer from './Footer';
 import FormM from "./FormM"
 import {API_KEY} from "./Config"
+import {Container, Grid, Box} from "@material-ui/core"
 
 
 
@@ -55,8 +56,13 @@ componentDidMount = () => {
           {this.state.isSignedIn ? (
            <>
           <NavBar user={firebase.auth().currentUser} />
+ 
              <FormM/>
+        
              <Footer/>
+             
+             
+     
            </>
          ) : (
 

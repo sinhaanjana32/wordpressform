@@ -8,11 +8,18 @@ import GitHub from '@material-ui/icons/GitHub';
 import Apps from '@material-ui/icons/Apps';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=>({
   root: {
    "&. MuiBottomNavigationAction-root":{
      minWidth: 0,
      maxWidth: 100,
+     position: 'absolute',
+     [theme.breakpoints.down("sm")]: {
+      paddingTop: '100px',
+      position: 'absolute'
+    
+      },
+  
      
    },
    "& .MuiSvgIcon-root": {
@@ -23,14 +30,14 @@ const useStyles = makeStyles({
      },
    }
   }
-})
+}))
 
 const Footer =() => {
 
 const classes = useStyles();
 
   return(
-<BottomNavigation width="auto" style={{background:"#222"}}>
+<BottomNavigation width="auto" height="auto" style={{background:"#222", paddingTop:'10px' }}>
 <BottomNavigationAction className={classes.root} style={{padding:0}}
  icon={<LinkedIn />}
  href="https://www.linkedin.com/in/anjana-sinha/"

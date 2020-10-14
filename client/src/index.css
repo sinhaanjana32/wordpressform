@@ -33,5 +33,33 @@ color: tan;
 }
 
 
+.navbarStyle {
+  justify-content: space-between;
+  align-items: center;
+  text-align:center;
+  color: tomato;
+  display: flex;
+  font-size:20px;
+
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .navbarStyle{
+    font-size: 12px;
+    flex-wrap: nowrap;
+    line-height: 10px;
+    justify-content: space-between;
+    align-items: center;
+    text-align:center;
+    display: flex;
+    padding: 0.5px;
+  }
+
+}
+
+
 
 @import '~antd/dist/antd.css';
