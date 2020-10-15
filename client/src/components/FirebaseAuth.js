@@ -56,14 +56,14 @@ componentDidMount = () => {
           {this.state.isSignedIn ? (
            <>
           <NavBar user={firebase.auth().currentUser} />
+         
              <FormM/>
-             <Footer/>
+   
            </>
          ) : (
            <>
            <NavBar/>
         <div className="login" >
-      
            <h1 className="note">  SignIn</h1>
            <StyledFirebaseAuth
              uiConfig={this.uiConfig}

@@ -30,6 +30,10 @@ const infoSchema = mongoose.Schema({
         type: String,
         default: 1
     },
+    launch:{
+        type: String,
+        
+    }
     
 }, { timestamps: true })
 

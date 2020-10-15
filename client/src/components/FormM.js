@@ -22,11 +22,13 @@ const useStyles = makeStyles(theme => ({
     transform: "translate(-50%, -50%)",
     position:"absolute",
     overflowX:'hidden',
+    height:"auto",
     [theme.breakpoints.down("sm")]: {
      
       overflowX:"hidden",
       float:"none",
-      paddingTop: '12rem',
+      height:"40vh",
+      position:"absolute",
       paddingBottom:'2rem',
       justifyContent:'center',
 
@@ -85,6 +87,7 @@ const FormM = () => {
   const [name, setName] = useState('');
   const [link, setLink] = useState('');
   const [service, setService] = useState('');
+  const [launch, setLaunch] = useState('');
   const [value, setValue] = useState('female');
 
   const [platform,setPlatform] = useState({
@@ -126,6 +129,7 @@ const FormM = () => {
       platform: platform,
       radiobox: value,
       service: service,
+      launch: launch,
   }
 
   console.log(variables)
@@ -144,9 +148,10 @@ const FormM = () => {
 const classes = useStyles()
 return (
  <>
-<Box  style={{background:"#233",height:"200vh",padding:'2px' }}></Box>
+<Box component="div" style={{background:"#233",height:"200vh" }}></Box>
 
-<Grid fixed className={classes.form} >
+<Grid container justify="center">
+<Box component="form" className={classes.form} >
  <Typography variant="h5"  style={{color:"tan", textAlign:"center", textTransform:"uppercase" }}>
    Share your requirements...</Typography>
    <br/>
@@ -161,19 +166,9 @@ value={name}
 onChange={(e)=> {setName(e.target.value)}} />
 <br />
 <br />
-<FormLabel className={classes.ledgend} component="legend">2.Any competitor or reference website? </FormLabel>
- <InputField
-fullWidth={true}
-label="Website Link"
-variant="outlined"
-inputProps={{style:{color: "white"}}}
-margin="dense" size="medium"
-value={link}
-onChange={(e)=> {setLink(e.target.value)}}
- />
- <br />
-<br />
-<FormLabel className={classes.ledgend} component="legend">3. Explain your Service</FormLabel>
+
+
+<FormLabel className={classes.ledgend} component="legend">2. Explain your service /blog / product.  </FormLabel>
  <InputField
 fullWidth={true}
 label="Type Here"
@@ -189,11 +184,27 @@ onChange={(e)=> {setService(e.target.value)}}
 <br />
 <br />
 
+
+
+<FormLabel className={classes.ledgend} component="legend">3.Any competitor or reference website? </FormLabel>
+ <InputField
+fullWidth={true}
+label="Website Link"
+variant="outlined"
+inputProps={{style:{color: "white"}}}
+margin="dense" size="medium"
+value={link}
+onChange={(e)=> {setLink(e.target.value)}}
+ />
+ <br />
+<br />
+
+
 <FormLabel className={classes.ledgend} component="legend">4. Which platform you want to use?</FormLabel>
         <FormGroup>
           <FormControlLabel
             control={<Checkbox />}
-            label="WP"
+            label="WordPress"
             onChange={handleChange}
             name="WP"
             checked={WP}
@@ -210,7 +221,7 @@ onChange={(e)=> {setService(e.target.value)}}
           />
             <FormControlLabel
             control={<Checkbox  />}
-            label="React"
+            label="Hard Coded: JavaScript"
             onChange={handleChange}
             name="Code"
             checked={Code}
@@ -240,7 +251,7 @@ onChange={(e)=> {setService(e.target.value)}}
           />
           <FormControlLabel
             control={<Checkbox />}
-            label="just hosting"
+            label="Just hosting space"
             className={classes.cbLabel}
             onChange={handleChangedomain}
             name="hosting"
@@ -249,7 +260,7 @@ onChange={(e)=> {setService(e.target.value)}}
           />
           <FormControlLabel
             control={<Checkbox  />}
-            label="just domain"
+            label="just domain name"
             className={classes.cbLabel}
             onChange={handleChangedomain}
             name="DandH"
@@ -269,12 +280,38 @@ onChange={(e)=> {setService(e.target.value)}}
         <RadioGroup aria-label="gender" name="gender1" value={value} onChange={onOpChange}   className={classes.cbLabel}>
         <FormControlLabel value="2 - 3" control={<Radio />} label="2 - 3"   className={classes.cbLabel}/>
         <FormControlLabel value="5-7" control={<Radio />} label="5 - 7"   className={classes.cbLabel} />
-        <FormControlLabel value="5 pages and multiple similar pages" control={<Radio />} label="5 pages and multiple similar pages" />
+        <FormControlLabel value="Blog based website with multiple category" control={<Radio />} label="Blog based website with multiple category" />
    
       </RadioGroup>
+
+
+      <FormLabel className={classes.ledgend} component="legend">8. When do you want to launch?  </FormLabel>
+ <InputField
+fullWidth={true}
+label="Type Here"
+placeholder="Type here :)"
+variant="outlined"
+inputProps={{style:{color: "white"}}}
+margin="dense" size="medium"
+value={launch}
+multiline= 'true'
+rows='4'
+onChange={(e)=> {setLaunch(e.target.value)}}
+ />
+<br />
+<br />
+
         <Button type="button" className={classes.button} variant="outlined" fullWidth={true} endIcon={<SendIcon />} onClick={handleSubmit}>
         Submit</Button>
+        
+        <br />
+<br />
+
+<p style={{color: "white"}} >Thanks for submitting the form!</p>
+</Box>
         </Grid>
+    
+        <Footer/>
         
 
         </>
