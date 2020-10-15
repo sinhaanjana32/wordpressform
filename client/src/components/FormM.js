@@ -17,19 +17,19 @@ import SendIcon from "@material-ui/icons/Send"
 const useStyles = makeStyles(theme => ({
 
   form: {
-    top: "110%",
+    top: "120%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     position:"absolute",
     overflowX:'hidden',
     height:"auto",
     [theme.breakpoints.down("sm")]: {
-     
+     top:"80%",
       overflowX:"hidden",
       float:"none",
-      height:"40vh",
+      height:"100vh",
       position:"absolute",
-      paddingBottom:'2rem',
+      bottom:"-40%",
       justifyContent:'center',
 
     
@@ -148,7 +148,7 @@ const FormM = () => {
 const classes = useStyles()
 return (
  <>
-<Box component="div" style={{background:"#233",height:"200vh" }}></Box>
+<Box component="div" style={{background:"#233",height:"220vh" }}></Box>
 
 <Grid container justify="center">
 <Box component="form" className={classes.form} >
