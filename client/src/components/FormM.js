@@ -26,8 +26,8 @@ const useStyles = makeStyles(theme => ({
      
       overflowX:"hidden",
       float:"none",
-      paddingTop: '15rem',
-      paddingBottom:'1rem',
+      paddingTop: '13rem',
+      paddingBottom:'2rem',
       justifyContent:'center',
 
     

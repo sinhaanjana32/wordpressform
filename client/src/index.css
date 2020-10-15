@@ -10,11 +10,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color:#233;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   overflow-y: auto;
   justify-content: center;
   text-align:center;
- float: none;
+  float: none;
+ 
 }
 
 code {
@@ -63,3 +64,10 @@ color: tan;
 
 
 @import '~antd/dist/antd.css';
+
+@media screen and (max-width: 667px) {
+  body {
+      overflow-x: hidden !important;
+  }
+
+}
